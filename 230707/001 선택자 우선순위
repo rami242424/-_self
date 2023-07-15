@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 우선순위</title>
+  <style>
+    #id1 {
+      color: rgb(147, 236, 12);
+    }
+
+    .c1 {
+      color: red;
+      background-color: aqua;
+    }
+
+    /* 1000줄 */
+    p {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="c1" id="id1" style="color:rgb(186, 14, 239)">
+    선택자 우선순위1</p>
+  <p class="c1" id="id1">선택자 우선순위2</p>
+  <p>선택자 우선순위3</p>
+</body>
+
+</html>

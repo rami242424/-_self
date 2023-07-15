@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/230715.css">
+  <title></title>
+
+  <style>
+    /* 101점 */
+    p#id1 {
+      color: pink;
+    }
+
+    /* 101 */
+    div #id1 {
+      color: green;
+    }
+
+
+    /* 1 */
+    p {
+      color: red;
+    }
+
+    /* 100 */
+    #id1 {
+      color: blue;
+    }
+
+    /* 10 */
+    .class {
+      color: yellow;
+    }
+
+    #id .class.class1 {
+      color: rgb(236, 70, 206) !important;
+    }
+  </style>
+  <link rel="stylesheet" href="./002.css">
+</head>
+
+<body>
+  <p>안녕하세요</p>
+  <div>
+    <p id="id1" class="class">
+      1. 이 글자는 어떤 색일까요?
+    </p>
+    <p id="id2" class="class class1 class3" style="color:rgb(0, 255, 42)">2. 이 글자는 어떤 색일까요??
+    </p>
+    <!-- id2는 inline-style이 직접적용 1000점 -->
+  </div>
+
+
+
+</body>
+
+</html>

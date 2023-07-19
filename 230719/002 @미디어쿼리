@@ -1,0 +1,50 @@
+피그마 연습하기
+https://www.figma.com/file/VquIsZdVkroReGLxRRsR2E/%EB%A9%8B%EC%82%AC_%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EC%8A%A4%EC%BF%A8_7%EA%B8%B0?type=design&node-id=31890-4187&mode=design&t=GUJ1mXEu1HsRDV1a-0
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>media</title>
+  <style>
+    body {
+      height: 200vh;
+    }
+
+    @media (min-width:640px) and (max-width:1000px) {
+      body {
+        background-color: skyblue;
+      }
+    }
+
+    @media (min-height:500px) and (max-height:600px) {
+      body {
+        font-size: 100px;
+      }
+    }
+
+    @media (orientation:landscape) {
+      body {
+        background-color: gold;
+      }
+    }
+
+    @media (orientation:portrait) {
+      body {
+        background-color: royalblue;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  안녕하세요
+
+
+
+</body>
+
+</html>

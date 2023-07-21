@@ -1,4 +1,6 @@
 /*종찬님 특강내용 min-width의 초기값은 auto 컨텐츠 크기만큼*/
+https://codepen.io/veamcamp/pen/QWaBXXq
+
 <!-- 문제화면 -->
 <section class="container">
   <aside class="sidebar">문제화면</aside> 

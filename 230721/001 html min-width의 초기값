@@ -1,0 +1,28 @@
+/*종찬님 특강내용 min-width의 초기값은 auto 컨텐츠 크기만큼*/
+<!-- 문제화면 -->
+<section class="container">
+  <aside class="sidebar">문제화면</aside> 
+  <main class="main">
+    
+     <div class="grid">
+       <div class="grid-item">A</div>
+       <div class="grid-item">B</div>
+       <div class="grid-item">C</div>
+     </div>
+    
+  </main>
+</section>
+
+<!-- 개선화면 -->
+<section class="container">
+  <aside class="sidebar">개선화면</aside> 
+  <main class="main type_resolved">
+    
+     <div class="grid">
+       <div class="grid-item">A</div>
+       <div class="grid-item">B</div>
+       <div class="grid-item">C</div>
+     </div>
+    
+  </main>
+</section>

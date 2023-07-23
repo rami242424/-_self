@@ -24,6 +24,7 @@ h1 {
 }
 img {
   vertical-align: top;
+/*bottom 으로 해도 되지만 보통 top으로 함*/
 }
 a {
   color: inherit;

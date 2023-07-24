@@ -48,7 +48,7 @@
           </button>
         </li>
         <li>
-          <button type="button" class="btn-cola active">
+          <button type="button" class="btn-cola on">
             <img src="./img/cola-green.png" alt="" />
             <span class="cola-name">Green_Cola</span>
             <strong class="cola-price">1000원</strong>

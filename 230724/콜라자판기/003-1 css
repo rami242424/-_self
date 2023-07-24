@@ -1,0 +1,114 @@
+/* reset ---------------------- */
+body,
+h1,
+h2,
+p,
+ul,
+button {
+  padding: 0;
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+}
+button:enabled {
+  cursor: pointer;
+  font: inherit;
+}
+img {
+  vertical-align: top;
+}
+
+/* 공통 CSS */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* CSS 적용 */
+body {
+  background-color: #eae8fe;
+}
+
+/* 제목 */
+h1 {
+  text-align: center;
+}
+h1 img {
+  max-width: 50%;
+}
+
+/* 메인 레이아웃 ---------------------- */
+main {
+  width: 748px;
+  max-width: 100%;
+  display: grid;
+  gap: 20px 28px;
+}
+/* 749부터 적용하겠다. */
+@media (min-width: 749px) {
+  main {
+    grid-template-areas:
+      'section1 section2'
+      'section1 section3';
+    grid-template-columns: repeat(2, 1fr);
+    margin: 67px auto;
+  }
+}
+/* 768까지 적용하겠다. */
+@media (max-width: 748px) {
+  main {
+    grid-template-areas:
+      'section1'
+      'section2'
+      'section3';
+    margin: 18px auto;
+  }
+}
+
+.section1 {
+  background-color: slateblue;
+  grid-area: section1;
+}
+.section2 {
+  background-color: salmon;
+  grid-area: section2;
+}
+.section3 {
+  background-color: royalblue;
+  grid-area: section3;
+}
+
+/* 판매 음료 */
+.cola-list {
+}
+
+.btn-cola {
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+}
+.btn-cola img {
+}
+.btn-cola {
+}
+
+.btn-cola.on {
+}
+
+.btn-cola:disabled {
+}

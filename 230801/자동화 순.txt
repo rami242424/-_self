@@ -1,0 +1,12 @@
+자동화 순
+Bootstrap > Tailwind > Sass > pure css
+
+디자인이 나온 상태에서 project
+Tailwind > Sass > pure css
+
+시간이 매우 촉박하고 ROI가 제대로 나오는 프로젝트
+Bootstrap
+
+UI/UX, Code의 퀄리티가 높아지는 방향
+Sass
+```

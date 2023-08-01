@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>javascript const</title>
+</head>
+<body>
+    <button id="submitBtn">눌럿!</button>
+    <script>
+
+        valueA = 1; // 매우 안좋은 습관
+
+        const my_name ="WADE";
+
+        if(true){ // -- 코드블록의 시작입니다. -- //
+
+            let valueB = 'Hello!';
+            const my_name ="WADE";       // 코드블록 밖의 my_name과 별개의 상수입니다.
+
+        } // -- 코드블록의 끝입니다. -- //
+
+        // 코드블록 안에 변수들은 '코드블록 변수'로 블록 안에서만 인정됨
+        // 지금 상황에서 console.log('valueB') 를 찍어도 아무것도 나오지 않는다.--
+
+        valueB = 'nice to meet you!';  // 변수 정의 이전에 값을 할당 할 수 없습니다!
+        let valueB = 'Hi!';            // 코드블록 안의 valueB와 별개의 변수입니다.
+
+    </script>
+</body>
+</html>

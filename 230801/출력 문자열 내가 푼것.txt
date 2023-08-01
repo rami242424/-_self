@@ -1,0 +1,8 @@
+//출력 문자열 내가 푼것
+//1. CEO leehojun
+console.log(srt2.indexOf('CEO leehojun'));
+console.log(srt2.substring(8,20));
+
+//2. CTO kindohyeon
+console.log(srt2.indexOf('CTO kindohyeon'));
+console.log(srt2.substring(21,35));

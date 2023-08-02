@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>숫자를 표현하는 여러가지 기법</title>
+</head>
+<body>
+<script>
+// parseInt (문자열을 정수로 바꿔주는 함수, 문자열의 첫번째 문자부터 변환을 하다가 숫자가 아닌 문자를 만나면 변환을 종료. 문자열과 숫자 인자를 가지며, 숫자 인자를 전달하면 변환하고자하는 문자열를 해당하는 인자만큼의 진수로 인식합니다.)
+// parseFloat (문자열을 소수로 바꿔주는 함수입니다. 추가적인 인자를 갖지 않습니다.)
+
+parseInt("123"); // 123
+parseInt("123.123"); // 123
+parseInt("123px"); // 123
+parseInt("px123"); // NaN
+parseInt('     10'); // 10
+parseInt('11', 2); // 3
+parseInt('11', 10); // 11
+
+parseFloat("123.123"); // 123.123
+parseFloat("123.123px"); // 123.123
+parseFloat("px123.123"); // NaN
+
+
+
+// toString : 숫자를 문자열로 변환합니다. 전달인자를 통해 원하는 진수로 표현하는것이 가능
+let num = 3
+num.toString(); // "3"
+
+// isNaN
+isNaN(NaN); // true
+isNaN(10); // false
+isNaN("10"); // false
+isNaN("10px"); // true
+isNaN([]); // false
+isNaN({}); // true
+
+// Number.isNaN사용을 권고해드립니다.
+Number.isNaN(NaN); // true
+Number.isNaN(10); // false
+Number.isNaN("10"); // false
+Number.isNaN("10px"); // false
+Number.isNaN([]); // false
+Number.isNaN({}); // false
+
+
+// math 내장객체를 이용한 연산
+
+Math.PI; // 3.141592653589793
+
+// round 반 (올/내) 림 (입력값을 반올림한 수와 가장 가까운 정수 값을 반환)
+Math.round(10.49); // 10
+Math.round(10.77); // 11
+
+// abs 절대값 (주어진 숫자의 절대값을 반환. x가 양수이거나 0이라면 x를 리턴하고, x가 음수라면 x의 반대값, 즉 양수를 반환합니다.)
+Math.abs(-10); // 10
+
+// pow n승
+Math.pow(2, 3); // 8 , 2**3
+Math.pow(4, 0.5); // 2, 4의 0.5승
+
+// sqrt 루트
+Math.sqrt(16); // 4, 16**0.5
+
+// random : 0 ~ 1 사이의 랜덤한 숫자
+Math.random(); // 0.37167353229217315, 0.40686593843402186 (계속바뀜)
+
+// ceil 올림 (주어진 숫자보다 크거나 같은 숫자 중 '가장 작은 숫자'를 integer 로 반환)
+Math.ceil(10.1); // 11 (10.1과 11중 가장 작은 정수 숫자는 11)
+
+// floor 내림 (주어진 숫자와 같거나 작은 정수 중에서 '가장 큰 수'를 반환)
+Math.floor(10.9); // 10 (10.9와 10에서 가장 작은 정수는 10)
+
+
+Math.max(1, 2, 3, 4, 5); // 5
+Math.min(1, 2, 3, 4, 5); // 1
+
+let test = [1, 2, 3]
+Math.max(...test); //3, ... 전개구문에서 max찾기
+Math.min(...test); //1
+
+</script>
+</body>
+</html>

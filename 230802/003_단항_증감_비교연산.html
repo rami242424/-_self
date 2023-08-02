@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>연산자</title>
+</head>
+<body>
+<script>
+// 단항연산 
+console.log(-2) // -2
+console.log(-(-2)) // 2
+console.log(--2) // error
+console.log(+4) // 4
+console.log(+'4') // 4
+
+// 소숫점 제거 (비트연산자에서 다시 볼 예정)
+console.log(~~3.14) // 3 (*나홀로_번외, console.log(~3.14) -> -4)
+
+// 증감연산자
+let num = 3; // 증감연산자는 할당연산자를 통해 할당된 값에만 사용 가능합니다.
+console.log("증감연산 : ", ++num); // 4
+console.log("증감연산 : ", num++); // 5 (출력하고 나서 연산을 합니다!)
+console.log("증감연산 : ", --num); // 4
+console.log("증감연산 : ", num--); // 3 (출력하고 나서 연산을 합니다!)
+// why? 출력해보니 다 4로 출력이 될까요? 답은 증감연산자에 위치에 있습니다. 그러나 여러분들이 이 증감연산자에 위치를 고려하실 필요는 실무에서 거의 발생하지 않습니다.
+
+//--------------------------->>>> 
+let num = 3; 
+console.log("증감연산 : ", ++num); 
+console.log("증감연산 : ", ++num);
+console.log("증감연산 : ", ++num);
+console.log("증감연산 : ", ++num);
+// 이렇게 입력하면 4 5 6 7 차례대로 연산되어 최종 7이 됨
+
+
+// 아래 둘 다 0 ~ 9까지 출력합니다.(++i 와 i++ 는 같다)
+for (let i = 0; i < 10; ++i) {
+    console.log(i)
+}
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}
+
+
+// 비교연산자(값은 boolean으로 반환됩니다.)
+console.log("비교연산 : ", 2 > 3); // 비교연산 :  false
+console.log("비교연산 : ", 2 >= 3); // 비교연산 :  false
+console.log("비교연산 : ", 2 < 3); // 비교연산 :  true
+console.log("비교연산 : ", 2 <= 3); // 비교연산 :  true
+console.log("비교연산 : ", 2 == 3); // 비교연산 :  false
+console.log("비교연산 : ", 2 != 3); // '!'같지않다는 뜻 // 비교연산 :  true
+console.log("비교연산 : ", 2 !== 3); // 같지않다 // 비교연산 :  true
+
+console.log("비교연산 : ", 2 === 3); // 비교연산 :  false
+// 등호 2개 사용은 권장 X, 실무에서 등호 3개 사용 권장.
+
+console.log("비교연산 : ", 2 == '2'); // 비교연산 :  true (다른 언어에서는 false, js에서는 true)
+console.log("비교연산 : ", 2 === '2'); // 비교연산 :  false (다른 언어에서 해당 문법이 없다, js에서는 false)
+
+// 전에는 css, js 에러가 안나고 SW가 실행되는데 중점을 두었다면
+// 현재는 SW 실행이 안되어도 에러를 정확하게 파악할 수 있도록
+// 에러를 출력해주는 것에 중점을 많이 둡니다. 
+
+</script>
+</body>
+</html>

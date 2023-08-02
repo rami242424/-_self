@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>연습문제</title>
+</head>
+<body>
+<script>
+    // 1번 연습문제
+    console.log(true && false)  // false
+    console.log(false && true)  // false
+    console.log(false || true) // 0+1 = true, or에서는 하나만 true여도 true
+    console.log(true || true) // 1+1 =true
+
+    // 2번 연습문제
+    console.log(!!'가') // 가 true의 부정의 부정 true
+    console.log(!'') // false의 부정! 이라 true
+
+    // 3번 연습문제
+    console.log('가' && '나') // '나' 출력, '나'는 true로 평가
+    console.log(0 && -1) // and에서 0이 있으면 0
+    console.log(0 && 1) // 0
+    console.log(1 && 1) // 1은 뒤에꺼 출력
+    console.log(1 && '안녕') // '안녕'
+    console.log(1 && true) // true
+    console.log(0 || true) // true
+    console.log(1 && '안녕') // '안녕'
+</script>
+</body>
+</html>

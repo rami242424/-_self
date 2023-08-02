@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>String 메서드
+    _replace_string_includes_split_trim_padStart_concat
+</title>
+</head>
+
+<body>
+<script>
+let s = 'paullab CEO 이호준';
+let ss = 'CTO 김창영';
+let sss = 'paullab CEO 이호준 CTO 김창영 CTO 홍길동'
+
+// replace
+console.log(s.replace('CEO', 'CFO'));
+console.log(sss.replace(/C[ET]O/g, '잡부'));
+
+
+// replace 고급 문법 //
+const string = `hojun, lee
+gildong, hong
+hojung, choi
+junho, lee`
+
+
+let result1 = string.replace(/(\w+), (\w+)/gm, "$1 $2");
+console.log(result1)
+
+let result2 = string.replace(/(\w+), (\w+)/gm, "$2 $1");
+console.log(result2)
+
+let result3 = string.replace(/(\w+), (\w+)/gm, "제 이름은 $1 제 성은 $2 입니다.");
+console.log(result3)
+
+//replaceAll
+console.log(sss.replaceAll('CTO', '잡부'));
+
+
+
+// let s = 'paullab CEO 이호준';
+// let ss = 'CTO 김창영';
+// let sss = 'paullab CEO 이호준 CTO 김창영 CTO 홍길동'
+// includes
+ss.includes('CTO') //true
+ss.includes('CEO') //false
+
+//메서드 채이닝
+//한번에 여러가지 대체 및 확인
+//toString() : 숫자를 문자열로 변환합니다. 전달인자를 통해 원하는 진수로 표현하는것이 가능합니다.
+sss.replace('CEO', 'CFO').includes('CEO').toString().toUpperCase()
+
+
+//가독성을 위해 개행해도됨
+sss
+    .replace('CEO', 'CFO')
+    .includes('CEO')
+    .toString()
+    .toUpperCase()
+
+
+
+// split 어떤기준으로 나눔
+s.split(' ') // ''안에 띄어쓰기에 따라서도 달라짐 주의!
+// 결과값을 이렇게 만들기 ['aa', 'bb', 'cc', 'dd'] //
+
+let text1 = 'aa bb cc dd'
+// text1.split(' ')
+let text2 = 'aa-bb-cc-dd'
+// text2.split('-')
+let text3 = 'aa,bb,cc,dd'
+// text3.split(',')
+let text4 = 'aa,bb-cc-dd'
+text4.replace(',', '-').split('-') // text4에 원본에 반영되는 것은 아닙니다.
+또는
+text4.split(/[,-]/)
+또는
+let text5 = text4.replace(',', '-')
+text5.split('-')
+
+
+
+
+//trim 사용자도 모르게 생긴 스페이스 공백 제거
+let text6 = '    aa bb cc dd    '
+text6.trim() // 'aa bb cc dd'
+또는
+text6.replaceAll(' ', '') // 'aabbccdd'
+
+
+//padStart
+let text7 = '123'
+text7.padStart(5, '0') // '00123'
+
+let text7 = '123'
+text7.padEnd(5, '0') // '12300'
+
+
+// 카카오 입사문제 일부(padStart, replace만 사용)
+// 우리의 목표: 00101 -> '  # #'
+let text8 = '101'
+text8.padStart(5, '0').replaceAll('0', ' ').replaceAll('1', '#')
+
+
+//concat 배열 메소드, 다수의 배열을 합침
+text1.concat(text2)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        switch문
+        switch (표현식) {
+            case 값1:
+                // 값1에 대한 실행 코드
+                break;
+            case 값2:
+                // 값2에 대한 실행 코드
+                break;
+            ...
+            default:
+                // 모든 case에 해당하지 않을 때 실행될 코드
+                break;
+            }
+//      위 코드에서 (표현식)은 'case 문의 값과 비교할 변수'입니다. 
+//      표현식의 값과 case의 값이 같은 경우 해당 case의 실행 코드가 실행됩니다.
+//      만약 표현식 값과 모든 case의 값이 일치하지 않는 경우 default 블록 안의 코드가 실행됩니다.
+
+//      <switch문의 특징은 다음과 같습니다.>
+//      - switch 뒤에 오는 표현식들의 값에 따라 실행시킬 코드가 있는 곳으로 실행을 옮겨갑니다.
+//      - 코드실행을 한 뒤, break에 의해서 조건문을 빠져나오게 됩니다.
+//      - 표현식이 case와 일치하는 경우가 없다면 default 문으로 이동합니다.
+//      - default 문은 필수가 아닌 선택사항입니다.
+
+//      switch 문은 표현식의 값과 case의 값이 일치하는 경우에만 실행 코드가 실행됨을 케이스별로 명확히 구분하고 있어서
+//      if 문에 비해 가독성이 좋습니다.
+
+
+        <문제1>
+        사용자로부터 입력받은 성적에 따라 등급을 출력하는 프로그램을 작성하세요. 성적이 90점 이상이면 "A", 80점 이상이면 "B", 70점 이상이면 "C", 60점 이상이면 "D", 그 외에는 “강해져서 돌아와라”를 출력합니다.
+
+        const score = parseInt(prompt('점수를 입력하세요'));
+
+        switch (true) {
+            case score >= 90:
+                console.log("A");
+                break;
+            case score >= 80:
+                console.log("B");
+                break;
+            case score >= 70:
+                console.log("C");
+                break;
+            case score >= 60:
+                console.log("D");
+                break;
+            default:
+                console.log('강해져서 돌아와라');
+        }
+
+
+        <문제2>
+        let price = 0;
+        let menu = '카페라떼'; // 메뉴를 바꿔보세요!
+
+        switch (menu) {
+            case '아메리카노':
+                price = 4000;
+            case '카페라떼':
+                price = 5000;
+                console.log(price);
+            case '바닐라라떼':
+                price = 6000;
+                console.log(price);
+            case '콜드브루':
+                price = 5500;
+                console.log(price);
+            case '딸기라떼':
+                price = 7000;
+                console.log(price);
+            case '레몬에이드':
+                price = 6500;
+                console.log(price);
+            case '에스프레소':
+                price = 3500;
+                console.log(price);
+            case '루이보스':
+                price = 4500;
+                console.log(price);
+            default:
+                console.log('메뉴를 정확히 입력하세요.');
+        }
+        // [메뉴를 정확히 입력하세요.]
+        price // [4500]
+        default 문이 실행되어 가격이 4500이 된 것을 볼 수 있습니다. 즉, break가 없다면 switch문을 탈출하지 않고 모든 코드들을 순서대로 실행시킵니다. switch문을 적절하게 사용하고 싶다면 반드시 break를 작성해주는 것을 잊지맙시다. 
+
+        -> break 입력 후
+        let price = 0;
+        let menu = '카페라떼'; // 메뉴를 바꿔보세요!
+
+        switch (menu) {
+            case '아메리카노':
+                price = 4000;
+                console.log(price);
+                break;
+            case '카페라떼':
+                price = 5000;
+                console.log(price);
+                break;
+            case '바닐라라떼':
+                price = 6000;
+                console.log(price);
+                break;
+            case '콜드브루':
+                price = 5500;
+                console.log(price);
+                break;
+            case '딸기라떼':
+                price = 7000;
+                console.log(price);
+                break;
+            case '레몬에이드':
+                price = 6500;
+                console.log(price);
+                break;
+            case '에스프레소':
+                price = 3500;
+                console.log(price);
+                break;
+            case '루이보스':
+                price = 4500;
+                console.log(price);
+                break;
+            default:
+                console.log('메뉴를 정확히 입력하세요.');
+        }  // [5000]
+
+
+        <문제3>
+        new Date () // Wed Aug 09 2023 18:23:38 GMT+0900 (한국 표준시)
+        new Date().getDay() // 3 (수요일 index는 3)
+
+        switch (new Date().getDay()) {
+            case 1:
+                document.write('월요일입니다.');
+                break;
+            case 2:
+                document.write('화요일입니다.');
+                break;
+            case 3:
+                document.write('수요일입니다.');
+                break;
+            case 4:
+                document.write('목요일입니다.');
+                break;
+            case 5:
+                document.write('금요일입니다.');
+                break;
+            default:
+                document.write('금금요일입니다. 주말이 뭐죠?');
+                break;
+        } // 웹창에 [수요일입니다.]
+
+
+        switch (new Date().getDay()) {
+            case 1:
+                document.write('월요일입니다.');
+                console.log('월요일입니다.');
+                break;
+            case 2:
+                document.write('화요일입니다.');
+                console.log('화요일입니다.');
+                break;
+            case 3:
+                document.write('수요일입니다.');
+                console.log('수요일입니다.');
+                break;
+            case 4:
+                document.write('목요일입니다.');
+                console.log('목요일입니다.');
+                break;
+            case 5:
+                document.write('금요일입니다.');
+                console.log('금요일입니다.');
+                break;
+            default:
+                document.write('금금요일입니다. 주말이 뭐죠?');
+                console.log('금금요일입니다. 주말이 뭐죠?');
+                break;
+        } // 웹창과 콘솔에 [수요일입니다.]
+        
+    </script>
+</body>
+
+</html>

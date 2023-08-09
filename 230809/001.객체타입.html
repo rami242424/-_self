@@ -1,0 +1,77 @@
+객체타입(Object Types)
+- 특징
+1) 객체는 프로퍼티(객체의 상태)와 메서드(객체의 동작)를 가진다.
+2) 값을 변수에 저장할 때 값 자체가 아닌 "값의 위치"가 저장된다.
+(따라서 객체 값을 다른 변수에 할당 할때는 값의 참조(위치)가 저장된다.)
+
+let val = 'hello!';
+console.log(val.toUpperCase()); // 'HELLO!'
+
+// 위의 코드가 내부적으로는 아래처럼 실행됩니다. 이것이 바로 autoboxing 입니다.
+
+let val = 'hello!';
+let temp = new String('hello!'); // -> temp : String['hello!']
+
+console.log(temp.toUpperCase()); // [HELLO!]
+temp = null; // -> HELLO! / null
+
+<배열 Array>
+배열은 데이터를 순서대로 저장하는 객체.
+여러개의 데이터를 한 변수에 저장할 수 있기 때문에, 추가-제거-정렬-검색 등 다양한 작업을 수핼할 수 있도록 여러가지 메소드를 제공.
+- 배열의 특징
+1) 빈 배열로 생성하거나 요소가 포함된 배열로 생성할 수 있습니다.
+const arr = []; // undefined // arr -> []
+const arr = [1, 2, 3]; // undefined // arr -> [1, 2, 3]
+const arr2 = new Array(4, 5, 6); // undefined // arr2 -> [4, 5, 6]
+const arr2 = new Array(3); // undefined // arr2 -> [empty x 3]
+
+
+2) 배열은 숫자를 사용하여 값에 접근할 수 있습니다. 
+이때 '숫자' -> '값의 순서'를 의미하며, 이 순서를 인덱스(index)라고 함.
+'배열안에 존재하는 값' -> '원소(elements)'라고 부릅니다. 
+(심지어 존재하지 않는 원소에도 접근이 가능합니다.)
+const arr = [1, 2, 3]; // 배열 안의 원소에 접근하기 위해서는 인덱스 번호를 이용합니다. 
+console.log(arr[0]); // 1
+console.log(arr[1]); // 2
+console.log(arr[2]); // 3
+console.log(arr[3]); // ??
+
+3) 배열은 가지고 있는 원소의 길이를 나타내는 length 프로퍼티를 가지고 있습니다.
+const myArray = [1, 2, 3, 4, 5];
+console.log(myArray.length); // 5
+
+4) 배열은 배열 안에 다른 배열을 포함할 수 있습니다. 이러한 배열을 다차원 배열이라고 합니다.
+const arr2 = [
+  [1, 2],
+  [3, 4],
+  [5, 6]
+];
+console.log(arr2[0][0]); // [1]
+console.log(arr2[2][1]); // [6]
+
+-> 2차원 배열은 행렬 즉, 매트릭스 라고 함.
+const arr3 = [
+  [
+    [1, 2],
+    [3, 4]
+  ],
+  [
+    [5, 6],
+    [7, 8]
+  ]
+];
+console.log(arr3[0][1][0]); // [3]
+console.log(arr3[1][0][1]); // [6]
+
+- 배열의 메소드
+push, pop, shift, unshift, splice, slice, sort, forEach, map, filter, reduce, includes, join
+
+<객체(Object)>
+배열처럼 여러개의 데이터를 한 변수에 저장할 수 있는 자료형.
+차이점은 배열이 값에 접근하기 위해서는, 배열 생성시 자동으로 부여되는 인덱스 번호를 이용해야 했지만
+객체는 특별한 키(Key)를 통해 원하는 값(Value)에 접근 할 수 있는 "키-값"쌍으로 이루어져 있다.
+
+- 객체의 특징
+1) 객체의 '리터럴' 표현은 중괄호 {}를 사용하여 생성합니다.
+객체는 key-value 쌍으로 이루어져 있으며, 각 key와 value는 콜론:으로 구분
+키-값 쌍을 합쳐서 -> 속성(attribute) 이라고 한다. 속성의 값이 함수인 경우 -> '메소드'

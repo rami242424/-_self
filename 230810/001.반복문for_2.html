@@ -1,0 +1,112 @@
+        <!-- 
+        let arr = [1,2,3]; // arr에는 [1,2,3]의 주소값이 들어있다.
+        let arr2 = arr; // arr2에는 [1,2,3]의 주소값이 들어있다. 즉 arr2와 arr는 [1,2,3]의 주소값이 동일하게 들어있다.
+        arr===[1,2,3] // false, arr는 [1,2,3]의 주소값이 들어있을 뿐 , [1,2,3]을 가지고 있지는 않다.
+        
+        원시타입 : 값을 복사해서 저장
+        객체타입 : 값의 주소를 저장
+        
+        let a = 1;
+        let b = 1;
+        a===b // true 
+        -->
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title></title>
+        </head>
+        <body>
+            <script>
+                // //평균 구하기
+                // var value1 = [100, 200, 50, 400, 900];
+                // var value2 = [60, 40, 80, 30, 90];
+
+                // function average(value){
+                // var sum = 0;
+                // for(var i=0; i<value.length; i++){
+                //     sum += value[i];
+                // }
+                // return sum/value.length;
+                // }
+
+                // document.write('평균1 : ', average(value1)); //330
+                // document.write('<br>');
+                // document.write('평균2 : ', average(value2)); //60
+
+                //////////////////////////////////////////////////////
+                
+                //최댓값 구하기
+                // var value = [100, 200, 50, 400, 900];
+                // function maximum(value){
+                // var max = 0;
+                // for(var i=0; i<value.length; i++){
+                //     if(max < value[i]){
+                //     max = value[i];
+                //     }
+                // }
+                // return max;
+                // }
+                // document.write(maximum(value)); //900
+                // document.write('<br>');
+
+                //Math.max.apply() 사용해서 최댓값 구하기
+                // var max2 = Math.max.apply(null, value);
+                // document.write(max2); //900
+
+                //////////////////////////////////////////////////////
+
+                // <문제1>
+                // 전달받은 객체의 키와 벨류값을 모두 출력하는 for문을 만들어보세요.
+                // const person = {
+                //     name: '재현',
+                //     age: 20,
+                //     gender: 'male'
+                // };
+                
+                    // 일단, key값 소환하기
+                // const props = Object.keys(person);
+                // console.log(props); // ['name', 'age', 'gender'] -> key값 소환
+
+
+                // for (let i = 0; i < props.length; i++) {
+                //     console.log(`key: ${props[i]} , value : ${person[props[i]]} `);
+                // }
+                
+
+                // // 팁!------------------------------
+                // 배열반환(키값찾기) : Object.keys(person); -> key의 배열반환 (암기하자!!)
+                // 배열반환(밸류값찾기) : Object.values(person); -> value의 배열반환 (암기하자!!)
+
+                // person배열의 숫자 반환 : 
+                const props = Object.keys(person);
+                props.length // key length값 3
+
+                // 객체의 value값 반환 : person[props[i]]
+                const props = Object.keys(person);
+                for (let i = 0; i < props.length; i++) {
+                    console.log(person[props[i]]);
+                } // 재현 20 male
+                
+                
+                // 객체에 키로 접근하는 방법 : 1. [] 2. 점.
+                // 2. 점.으로 할경우 에러남 -> 키가 'name'같이 문자열로 들어오기 때문에..
+
+                결론 답
+                // const person = {
+                //     name: '재현',
+                //     age: 20,
+                //     gender: 'male'
+                // };
+                // const props = Object.keys(person);
+                // console.log(props);
+                // for (let i = 0; i < props.length; i++) {
+                //     console.log(`key: ${props[i]} , value : ${person[props[i]]} `);
+                // }
+
+            </script>
+        </body>
+        </html>

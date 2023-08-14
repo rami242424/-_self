@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+</head>
+<body>
+    <script>
+        <While>
+        while (조건식) {
+        // 조건식이 참일 때 실행될 코드
+        }
+        (조건식) : Truthy 또는 Falsy값을 반환하는 표현식
+        만약 Truthy를 반환하면 {코드}가 반복적으로 실행되며, (조건식)이 Falsy값을 반환하는 순간 반복이 종료
+        
+        //0부터 10까지의 숫자 반환
+        let num = 0;
+
+        while (num < 11) {
+        document.write(num, '<br>');
+        num += 1;
+        }
+        // 변수 num을 0으로 초기화하고, num이 11보다 작을 때까지 반복적으로 실행.
+        // 반복문 안에서는 num의 값이 출력되고, num은 1씩 증가
+
+
+        <do-while>
+        // 조건식이 거짓이더라도 반복문이 최소한 한 번은 실행되어야 할 때 사용.
+        let input;
+
+        do {
+            input = prompt("숫자를 입력하세요.");
+        } while (isNaN(input));
+
+            console.log("입력한 숫자는 " + input + "입니다.");
+            // 입력한 숫자는 'input'입니다.
+        // do-while 반복문을 사용하여 최초 한 번은 입력을 받도록 할 수 있습니다.
+
+        //////////////////////////////////////////////    
+        <while 식 일떄>
+        let num = 0;
+
+        while (num < 11) {
+        document.write(num, '<br>');
+        num += 1;
+        }
+        // [11]
+        
+        <do while 식 일때>
+        let num = 0;
+
+        do {
+        document.write(num, '<br>');
+        num += 1;
+        } while (num < 11);
+        // [11]
+        //////////////////////////////////////////////
+    
+        
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        const avengers = ['spidermen', 'ironman', 'hulk', 'thor'];
+        // avengers.splice(2, 0, 'blackwidow'); 
+        // []
+        // avengers
+        // ['spiderman', 'ironman', 'blackwidow', 'hulk', 'thor']
+
+        // avengers.splice(1, 1, 'hulk');
+        // ['ironman'] -> 삭제 된 값
+        // avengers
+        // ['spiderman', 'hulk', 'hulk', 'thor']
+
+        avengers.slice(0,2);
+        // ['spiderman', 'ironman'] -> 0번째 인덱스에서 추출 시작, 2번째 바로 이전요소인 1번째 인덱스까지 추출
+
+        slice : 배열에서 요소들을 추출하여 새로운 배열로 반환하는 메서드
+        slice(추출을 시작할 인덱스, 추출을 끝낼 인덱스)
+        추출할 요소는 첫 번째 인자에서 시작하여, 두 번째 인자에서 '바로 이전 요소'까지입니다.
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        ////////////////////////////////////////////////////////////////////////
+        // Math.random(); // 0 ~ 0.99999... 사이의 실수를 랜덤으로 반환하는 식
+
+        // Math.random() * 3 // 0 ~ 2.99999...
+        // Math.random() * 10 // 0 ~ 9.9999....
+
+        // Math.random() * 10 + 2 // 2 ~ 11.9999...
+        // Math.random() * 8 + 2  // 2 ~ 9.9999..
+
+        // parseInt(Math.random() * 8 + 2); // 2 ~ 9 정수만
+        ////////////////////////////////////////////////////////////////////////
+
+        // 로또 번호 만들기 1~45 사이의 6개 숫자, 중복x, 배열식으로
+        // parseInt(Math.random() * 45 + 1);
+
+        <강사님 답>
+        function lottoGenerator() {
+            const lottArr = [];
+            while (lottArr.length < 6) {
+                const result = parseInt(Math.random() * 45 + 1);
+                if (!lottArr.includes(result)) {
+                    lottArr.push(result);
+                }
+            }
+            return lottArr;
+        }
+        console.log(lottoGenerator());
+
+
+        <조코딩 특강 답>
+        var lotto = [];
+        while(lotto.length < 6) {
+            var num = (parseInt(Math.random()*45 + 1));
+            if (lotto.indexOf(num) == -1){
+                lotto.push(num);
+            }
+        } 
+        
+        document.write(lotto,'<br>');
+    </script>
+</body>
+</html>

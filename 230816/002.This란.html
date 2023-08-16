@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <script>
+        This 란?
+        this는 객체를 가리키는 참조 변수입니다. this는 호출되는 위치에 따라 다른 값을 출력하기 때문에 우리에게 혼란을 줍니다.
+
+        function a(){ 
+            console.log(this)  
+        }
+        a();
+        // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+        > this
+        // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+        여기서 this가 가르키는것 => 전역공간 (window)    
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+
+        let myObj = {
+            val1: 100,
+            func1: function () {
+            console.log(this); 
+            }
+        }
+            myObj.func1();
+        // {val1: 100, func1: ƒ}
+        여기서 this가 가르키는것 => {val1: 100, func1: f}
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+        
+        let myObj = {
+            val1: 100,
+            func1: function () {
+            console.log(this); 
+            }
+        }
+        let test = myObj.func1;
+        test();
+
+        // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+        // 여기서 this가 가르키는것 => window, why? 함수를 호출하는 객체를 가리키기 떄문에 (let test가 전역공간을 가르키기 때문에). (함수를 호출한 객체가 달라졌기 때문)
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+        
+            
+            ** this : 자신이 속한 객체 **
+
+
+
+
+    </script>
+</body>
+</html>

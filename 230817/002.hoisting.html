@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.6 함수의 호이스팅(Hoisting)</title>
+</head>
+<body>
+    <script>
+        9.6 함수의 호이스팅(Hoisting)
+        // <변수 선언문>
+
+            console.log(x); // undefined
+            console.log(y); // Cannot access 'y' before initialization -> y,z가 있는 것은 알고 있으나 접근할 수 없다
+            console.log(z); // Cannot access 'z' before initialization
+
+            var x = 1; //undefined
+            let y = 2;
+            const z = 3;
+
+
+            위의 식은
+            var x;
+            console.log(x);
+            console.log(y);
+            console.log(z);
+
+            x = 1;
+            let y = 2;
+            const z = 3;
+            라고 봐도 된다. x가 이미 선언되어있지만, 해당값만 나중에 할당된다고 보면 된다. -> hoisting 현상 떄문에
+            그러나 함수는 tdz안됨(호이스팅X)
+        
+
+            test();
+
+            var x = 1;
+            let y = 2;
+            const z = 3;
+
+            const test = function(){
+                console.log('test');
+            }
+            // Cannot access 'z' before initialization
+
+
+
+        // <함수 선언문>
+            sayHi(); // "Hello, lions!"
+            function sayHi() {
+                console.log("Hello, lions!");
+            }
+
+        // 호이스팅은 변수의 선언만을 끌어올리고, 변수의 초기화나 할당은 끌어올려지지 않습니다. 따라서 변수의 값을 초기화하기 전에 참조하면 undefined가 반환되는 것입니다.
+        // 함수 표현식 : 변수 선언만을 끌어올리기 때문에 함수를 선언하기 전에 함수를 호출하면 에러가 발생합니다
+        // 함수 선언문 : 전체를 끌어올리기 때문에 위의 코드처럼 함수를 선언하기 전에 함수를 호출할 수 있습니다.
+
+        //  let, const, class를 이용한 선언문은 일시적 사각지대(Temporal Dead Zone)라는것을 만들어서 호이스팅이 되었지만 안된 것처럼 동작하게 합니다. 그 이유는 호이스팅은 개발자가 의도하지 않은 결과를 만들기 때문에, 코드의 가독성과 유지보수성을 해치므로, 호이스팅이 발생하지 않도록 하기 위해서입니다.
+
+    </script>
+</body>
+</html>

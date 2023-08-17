@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Map</title>
+</head>
+<body>
+    <script>
+        1. Map
+        1.1 Map 이란?
+        Map 객체는 키-값 쌍을 가지는 객체 자료형의 한 종류입니다.
+
+
+
+
+        2. Set
+         let a = new Set('abc');
+         let b = new Set('cde');
+         >a // {a,b,c}
+         >b // {c,d,e}
+        >[...a] //{'a', 'b', 'c'}       
+
+        const cross - [...a].filter((value) => {
+            return b.has(value);
+        });
+        // true // ['c']
+        // 공통적인 데이터만 뽑아서 출력
+
+
+        const union = new Set([...a].concat([...b]));
+        // union {'a','b',}
+
+        const differ = [...a].filter((value)=> {
+            return !b.has(value);
+        // differ []'a','b']
+        })
+    </script>
+</body>
+</html>

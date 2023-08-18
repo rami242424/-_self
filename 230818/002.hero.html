@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function xhrRequest(){
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', '002.heros.json');
+            requestObj.send();
+            requestObj.onreadystatechange = () => {
+                console.log(requestObj.responseText);
+            }
+        }
+        // > xhrRequest()
+        // {
+        //     "squadName": "슈퍼히어로",
+        //     "members": [
+        //     {
+        //         "name": "아이언맨",
+        //         "age": 29,
+        //         "본명": "토니 스타크"
+        //     },
+        //     {
+        //         "name": "헐크",
+        //         "age": 39,
+        //         "본명": "부르스 배너"
+        //     }
+        //     ]
+        // }
+
+        다른풀이
+        // let jsonObj = {};
+
+        // function xhrRequest() {
+        //     const requestObj = new XMLHttpRequest();
+        //     requestObj.open('GET', '002.heros.json');
+        //     requestObj.send();
+        //     requestObj.onreadystatechange = () => {
+        //         if (requestObj.readyState === 4 && requestObj.status === 200) {
+        //             jsonObj = JSON.parse(requestObj.responseText);
+        //         }
+        //     }
+        // }
+
+        // xhrRequest();
+
+        // >jsonObj
+        // {
+        //     "squadName": "슈퍼히어로",
+        //     "members": [
+        //         {
+        //             "name": "아이언맨",
+        //             "age": 29,
+        //             "본명": "토니 스타크"
+        //         },
+        //         {
+        //             "name": "헐크",
+        //             "age": 39,
+        //             "본명": "부르스 배너"
+        //         }
+        //     ]
+        // }
+    </script>
+</body>
+</html>

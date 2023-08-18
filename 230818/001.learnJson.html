@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        8.1 JSON 이란?
+        JSON(JavaScript Object Notation)은 자바스크립트 객체 형식으로 데이터를 표현하는 문자 기반의 표준 포맷입니다. 다른 방식에 비해 가볍고 자바스크립트와 호환성이 높아 널리 사용됩니다. 쉽게 말해 텍스트로 표현된 정보의 덩어리라고 생각하시면 됩니다.
+        <JSON의 기본적인 형태>
+        {
+            "squadName": "슈퍼히어로",
+            "members": [
+            {
+                "name": "아이언맨",
+                "age": 29,
+                "본명": "토니 스타크"
+            },
+            {
+                "name": "헐크",
+                "age": 39,
+                "본명": "부르스 배너"
+            }
+            ]
+        }
+
+        8.3 JSON 메서드
+        - JSON.parse(): JSON문자열을 "JavaScript 객체로 변환"
+        - JSON.stringify() : JavaScript 객체를 "JSON문자열로 변환"
+
+        const json = '{"result":true, "count":42}';
+        const obj = JSON.parse(json); // json문자열을 JavaScript객체로 변환
+        console.log(obj); // {result: true, count: 42}
+
+        const json = '[1, 2, 3]';
+        const obj = JSON.parse(json); // json문자열을 JavaScript객체로 변환
+        console.log(obj); // [1, 2, 3]
+
+        const json2 = '[1,2,3 , [1,2,3]]';
+        const arr = JSON.parse(json2);
+        console.log(arr); // [1, 2, 3, Array(3)]
+        > typeof arr // 'object' 
+        > arr instanceof Array // true
+
+
+        const obj = { "result": true, "count": 42 }
+        const json = JSON.stringify(obj); // JavaScript 객체를 JSON문자열로 변환
+        console.log(json); // {"result":true,"count":42}
+
+        // JSON을 이용한 깊은 복사
+        // l 객체를 문자열화 했다가 다시 객체로 변환하기 때문에 새로운 객체를 생성하는것과 동일합니다. 하지만 함수는 제대로 복사가 불가능하다는 단점이 있습니다. 제대로된 깊은 복사를 위해서는 structuredClone 메소드를 사용해야합니다.
+        let l = [10, 20, 30];
+        let a = JSON.parse(JSON.stringify(l));
+        a[0] = 1000;
+
+        console.log(l);
+        // [10, 20, 30]
+
+        let l = { ten: 10, twenty: 20, thirty: { forty: 40 } };
+        let a = structuredClone(l);
+        console.log(a); // {ten: 10, twenty: 20, thirty: {…}}
+        또는
+        let a = JSON.parse(JSON.stringify(l));
+        console.log(a); // {ten: 10, twenty: 20, thirty: {…}}
+
+
+        // Ajax 통신을 통해 슈퍼히어로 Json 데이터를 받아봅시다!
+
+
+
+
+
+    </script>
+</body>
+</html>

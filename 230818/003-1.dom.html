@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)</title>
+</head>
+<body>
+    <!--
+    9.1 DOM API 이란?
+    API는 Application Programming Interface 입니다.
+    쉽게 ‘주문서’라고 기억해주시면 됩니다.
+    -->
+
+    <!--
+    9.2 DOM 트리에 접근하기
+    document 객체를 통해 HTML 문서에 접근이 가능합니다. 
+    document는 "브라우저가 불러온 웹페이지"를 나타내며, DOM 트리의 진입점 역할을 수행합니다.
+
+    // 해당하는 Id를 가진 요소에 접근하기
+    document.getElementById();
+
+    // 해당하는 모든 요소에 접근하기
+    document.getElementsByTagName();
+
+    // 해당하는 클래스를 가진 모든 요소에 접근하기
+    document.getElementsByClassName();
+
+    // css 선택자로 단일 요소에 접근하기
+    document.querySelector("selector");
+
+    // css 선택자로 여러 요소에 접근하기
+    document.querySelectorAll("selector");
+    -->
+
+    <!-- <button>HELLO!</button> -->
+    점심 식단
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면
+                <!-- <button>버튼</button> -->
+            </li>
+        </ul>
+    </article>
+    저녁 식단
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치찌게</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+
+        
+    <script>
+        // 연습1 배운 문법을 바탕으로 HTML 요소들 중 첫번째 item-second 와 첫번째 li 를 콘솔로 출력해보세요 🙂 (querySelector 사용 X) -->
+        // 풀이1-1) 첫번째 item-second
+        // const lis2 = document.getElementsByClassName('item-second');
+        // console.log(lis2);
+        // >lis1[0]
+        // <li class="item-second">유산슬</li>
+
+        // 풀이1-2) 첫번째 li (탕수육)
+        // const container = document.getElementById('container');
+        // const innerLis = container.getElementsByTagName('li');
+        // console.log(innerLis[0]);
+        // <li>
+        //     ::marker
+        //     "탕수육"
+        // </li>
+
+
+        // 연습 2-1
+        // 두번째 item-second 만 선택하기
+        // const firstLi = document.querySelector('#container+article .item-second');
+        // console.log(firstLi);
+        // <li class="item-second">
+        //     ::marker"
+        //     "김치찌게"
+        // </li>
+
+        // 연습 2-2
+        // const container = document.getElementById('container');
+        // const innerLis = container.getElementsByTagName('li');
+        // console.log(innerLis); // HTMLCollection(3) [li, li.item-second, li] 
+
+        // 연습 3-1 getEle~로 모든 li 선택하기
+        // const lis = document.getElementsByTagName('li');
+        // console.log(lis); 
+        // HTMLCollection(6) [li, li.item-second, li, li, li.item-second, li]
+
+        // 연습 3-2 query로 모든 li 선택하기 (위랑 차이점보기)
+        // const lis2 = document.querySelectorAll('li');
+        // console.log(lis2);
+        // NodeList(6) [li, li.item-second, li, li, li.item-second, li]
+
+        // 연습 4 첫번째 ul만 선택(= container 안에 있는 ul만 선택)
+        // const container = document.querySelector('#container ul');
+        // console.log(container);
+        // <ul>
+        //     <li>::marker"탕수육"</li>
+        //     <li class="item-second">::marker"유산슬"</li>
+        //     <li>::marker"짜장면"</li>
+        // </ul>
+        
+
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
+        // 9.3 DOM 제어 명령어
+        //1.이벤트 삽입 : target.addEventListener( type, listener )의 문법 형태를 지닙니다.
+        //-type에는 click, mouseover, mouseout, wheel 등 다양한 이벤트를 감지합니다.
+        //-listener 함수의 인수에는 "이벤트에 대한 정보"가 담겨있습니다.
+
+        // 연습 1 버튼을 누르면 콘솔창에 hello world 가 출력된다.
+        // const myBtn = document.querySelector("button");
+
+        // myBtn.addEventListener('click', function(){
+        //     console.log("hello world");
+        // })
+
+
+
+        // // 연습 2 버튼을 누르면 클래스 blue가 동작됨
+        // const btn = document.querySelector('button'); 
+        // // querySelector : 선택자로 단일 요소에 접근하기
+
+        // btn.addEventListener('click', function () {
+        //     btn.classList.toggle("blue");
+        // });
+
+
+    </script>
+</body>
+</html>

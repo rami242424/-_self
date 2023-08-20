@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자와 리턴값</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // 아보카도 코드 > 삼항 연산자로 바꿔보기!!!!!!!!!!!!!
+    // 일반 코드
+    let 아보카도 = true;
+    if (아보카도) {
+        console.log("아보카도 있었어(우유6개사옴)");
+    } else {
+        console.log("아보카도 없었어(우유1개사옴)");
+    }
+    //expected output : 아보카도 있었어(우유6개사옴)
+
+
+    // 삼항연산자
+    let 아보카도 = true;
+    function 아보카도사와(파라미터) {
+        return 파라미터 ? "아보카도 있었어(우유6개사옴)" : "아보카도 없었어(우유1개사옴)"
+    }
+    console.log(아보카도사와(아보카도));
+    //expected output : 아보카도 있었어(우유6개사옴)
+    // <---------------------------------------------->
+
+
+    // 삼항연산자 > if문으로 만들기!!!!!!!!!!
+
+    // 삼항연산자
+    // function getFee(파라미터) {
+    //   return 파라미터 ? '$2.00' : '$10.00';
+    // }
+    // getFee(true); // '$2.00'
+
+
+    // if문
+    // function getFee(파라미터) {
+    //     if (true) {
+    //         return '$2.00';
+    //     } else {
+    //         return '$10.00';
+    //     }
+    // }
+    // getFee(true); // '$2.00'
+
+
+    // <---------------------------------------------->
+    // <파선아실: 파라미터(변수명)는 선언, 아규먼트(값)는 실행>
+    // function getFee(파라미터) {
+    //     return 파라미터 ? '$2.00' : '$10.00';
+    // }
+    // console.log(getFee(true));
+
+    // OUTPUT : $2.00
+    
+    // function getFee(파라미터) {
+    //     return 파라미터 ? '$2.00' : '$10.00';
+    // }
+        // const 아규먼트 = true
+    // console.log(getFee(아규먼트));
+
+    // OUTPUT : $2.00
+
+    // <---------------------------------------------->// <---------------------------------------------->
+    // <---------------------------------------------->// <---------------------------------------------->
+    // 리턴값
+    // -고급 스킬 (return 활용법) : return 은 값을 돌려주기도 하지만 return 을 만나면 함수가 종료된다.
+        function checkNum(파라미터) {
+            for (let index = 0; index < 100; index++) {
+                console.log(index);
+                if(파라미터==index) {
+                    console.log("범위안에 값이 있습니다.");
+                }
+            }
+            return "아 끝났다"
+        }
+
+        console.log(checkNum(30)); // 1부터99까지 출력, 30에서는 범위안에 값이있습니다 같이 출력, 이후에도 99까지 인덱스를 출력한다.
+
+        // 그러나!!! 
+        function checkNum(파라미터) {
+            for (let index = 0; index < 100; index++) {
+                console.log(index);
+                if(파라미터==index) {
+                    console.log("범위안에 값이 있습니다.");
+                    return "빨리 끝났다";
+                }
+            }
+            return "아 끝났다"
+        }
+
+        console.log(checkNum(30)); // 1부터30까지 출력, 30에서 범위안에 값이 있습니다 같이 출력,
+        // return 빨리 끝났다가 있으므로, 출력 후 끝!!
+
+</script>
+</html>

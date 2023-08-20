@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디스트럭쳐링(구조분해할당)</title>
+</head>
+<body>
+    
+</body>
+<script>
+    - 객체의 구조분해할당 **잘모르겟
+    // 구조분해할당 할때 {원래키값 : 내가쓸변수명, 원래키값 : 내가쓸변수명}
+    var o = { age: 42, speak: "hello"}  // 변수
+    var { age=30, speak="hi", man="철수" } = o; // 기본값(구조분해할당값)
+
+    console.log(man); // 철수 : 변수 o에 없는 undefined 로 "기본값 적용"
+    console.log(age); // 42 : "변수 "o에 값이 있어 기본값 30이 적용안됨
+    console.log(speak); // hello : "변수" o에 값이 있어 기본값 hi가 적용안됨
+
+
+    // 구조분해할당 (디스트럭쳐링)
+    var o = { age: 42, speak: "hello"}
+    var { age, speak, up } = o;
+
+    console.log(age); // 42
+    console.log(speak); // hello
+    console.log(up); // undefined
+
+    // 변수 기본값 설정 (key 에 매칭된 value 가 undefined 일 경우 기본값이 적용됨)
+
+    var o = { age: 42, speak: "hello"} //변수
+    var { age=30, speak="hi", man="철수" } = o; //기본값
+
+    console.log(man); // 철수 : 변수 o에 없는 undefined 로 기본값 적용됨
+    console.log(age); // 42 : 변수 o에 값이 있어 기본값 30이 적용안됨
+    console.log(speak); // hello : 변수 o에 값이 있어 기본값 hi가 적용안됨
+
+    - 배열의 구조분해할당
+    const arr = [1,2,3];
+    console.log(arr);
+
+    const [a,b,c] = arr
+    console.log(a,b,c,"구조분해할당 한것");
+</script>
+</html>

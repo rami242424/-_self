@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. 더 인접한곳(Adjacent)으로 정밀하게 배치하기</title>
+</head>
+<body>
+    <!-- 6 -->
+    <!-- <strong class="sayHi">
+        반갑습니다.
+    </strong>  -->
+
+    <!-- 7 -->
+    <!-- 주석입니다 주석. -->
+    <article class="cont">
+        <h1>안녕하세요 저는 이런 사람입니다.</h1>
+        <p>지금부터 자기소개 올리겠습니다</p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt incidunt voluptates laudantium fugit, omnis
+        dolore itaque esse exercitationem quam culpa praesentium, quisquam repudiandae aut. Molestias qui quas ea iure
+        officiis.
+        <strong>감사합니다!</strong>
+    </article>
+
+    <script>
+        // 6----------------------
+        // const sayHi = document.querySelector('.sayHi');
+        //     sayHi.insertAdjacentHTML('beforebegin', '<span>안녕하세요 저는</span>');
+        //     sayHi.insertAdjacentHTML('afterbegin', '<span>재현입니다</span>');
+        //     sayHi.insertAdjacentHTML('beforeend', '<span>면접오시면</span>');
+        //     sayHi.insertAdjacentHTML('afterend', '<span>치킨사드릴게요</span>');
+
+        // const sayHi = document.querySelector('.sayHi');
+        //     sayHi.insertAdjacentHTML('beforebegin', '비포비긴');
+        //     sayHi.insertAdjacentHTML('afterbegin', '애프터비긴');
+        //     sayHi.insertAdjacentHTML('beforeend', '비포엔드');
+        //     sayHi.insertAdjacentHTML('afterend', '애프터엔드');
+
+        // -7-------------------
+
+        const container = document.querySelector('.cont');
+            console.log(container.querySelector('strong').closest('.cont1')); // null
+            console.log(container.firstElementChild); // 첫번째 자식을 찾습니다.=> <h1>안녕하세요 저는 이런 사람입니다.</h1>
+            console.log(container.firstChild); // #text
+            console.log(container.lastElementChild); // 마지막 자식을 찾습니다.=> <strong>감사합니다!</strong>
+            console.log(container.lastChild);// #text
+            console.log(container.nextElementSibling); // 다음 형제요소를 찾습니다.=> <script>
+            console.log(container.nextSibling); // #text
+            console.log(container.previousSibling); // 이전 형제노드를 찾습니다.=> #text
+            console.log(container.children); // 모든 직계자식을 찾습니다.=> HTMLCollection(3) [h1, p, strong]
+            console.log(container.parentNode); // 부모 요소를 찾습니다. 자기 자신부터 시작해 부모로 타고 올라가며 가장 가까운 cont 클래스 요소를 찾습니다. 단, 형제요소는 찾지 않습니다.=> <body>
+    </script>
+</body>
+</html>

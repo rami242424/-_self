@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom계속</title>
+</head>
+<body>
+    <p></p>
+    <input type="text">
+    <button>Write something!</button>
+
+    <script>
+        // const myBtn = document.querySelector('button');
+        // const myP = document.querySelector('p');
+        // const myInput = document.querySelector('input');
+
+        // myBtn.addEventListener('click', function(){
+        //     // myP.textContent = 'hello';
+        //     //myP에 hello 텍스트를 추가해주기 
+        //     //대신에
+        //     myP.textContent = myInput.value;
+
+        // });
+
+        // 001에서 텍스트 추가하는 것보다 훨씬 간편하다
+
+        const myBtn = document.querySelector('button');
+        const myP = document.querySelector('p');
+        const myInput = document.querySelector('input');
+
+        myInput.addEventListener('input', function(){
+            myP.textContent = myInput.value;
+        });
+        myP.innerHTML = "<strong>I'm Strong!!</strong>";
+
+        // -----------------------------------------------
+        
+    </script>
+</body>
+</html>

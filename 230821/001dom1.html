@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="parent"></div>
+
+    <script>
+        // 3.요소제어
+        // DOM api를 이용하면 요소를 새롭게 생성하고, 위치하고, 제거할 수 있습니다.
+        // 1. document.createElement(target) : target 요소를 생성합니다.
+        // 2. document.createTextNode(target) : target 텍스트를 생성합니다.
+        // 3. element.appendChild(target) : target 요소를 element의 자식으로 위치합니다.
+        // 4. element.removeChild(target) : element의 target 자식 요소를 제거합니다.
+
+
+
+        // <p요소추가+부모요소에 추가>
+        /*
+        const text = document.createElement('p'); // 가상공간에 있는 p태그를 text에서 포함
+        const parent = document.querySelector('.parent');
+
+        //text 붙여야될 타켓(위치) ; parent 의 자식요소로 text(즉 p)를 생성해라
+        parent.appendChild(text); */
+        // -------------------------------------
+        // <p요소추가+문장추가+부모요소에 추가>
+        /*
+        const text = document.createElement('p');
+        const textInside = document.createTextNode('문장입니다.');
+        text.appendChild(textInside) ;
+        const parent = document.querySelector('.parent');
+
+        parent.appendChild(text); 
+        //p태그를 만든다>textInside 문장입니다를 만든다>textInside를 p태그 자식으로 넣는다>parent class를 선택한다> parent 자식요소로 text(즉 p)를 넣는다. */
+        // -------------------------------------
+        /*
+        const text = document.createElement('p');
+        const text2 = document.createElement('p');
+        const textInside = document.createTextNode('문장입니다.');
+        text.appendChild(textInside) ;
+        text2.appendChild(textInside) ;
+        // 문장입니다가 text에서 text2로 바뀜
+        const parent = document.querySelector('.parent');
+
+        parent.appendChild(text);
+        // parent.appendChild(text);
+        //이렇게 추가로 똑같은 text(p태그) 생성해도 하나밖에 안생김
+        
+        parent.appendChild(text2);
+        // 이렇게 해야 p태그 하나 더 생김
+
+        // parent.removeChild(text2);
+        // text2지움
+        // 특정요소의 자식을 지울 수 있음
+        // parent.remove();
+        //부모자식 상관없이 다 없앰
+        */
+        // -------------------------------------
+        /*
+        const text = document.createElement('p');
+        const text2 = document.createElement('p');
+        const textInside = document.createTextNode('문장입니다.');
+        text.appendChild(textInside) ;
+        text2.appendChild(textInside) ;
+
+        const parent = document.querySelector('.parent');
+        /*
+        parent.appendChild(text);
+        parent.appendChild(text2);
+        */
+        // parent.append(text,text2); //위에 두줄을 한줄로!
+        parent.append('text입니다~', text, text2);
+        // append 하나로 글 추가 및 태그 추가도 가능
+        // */
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.10 preventDefault()&9.11 stopPropagation()</title>
+</head>
+
+<body>
+    <!-- 앵커의 기본 동작을 중지 -->
+    <a href="https://www.naver.com" class="link">네이버 링크입니다만..</a>
+
+    <!-- submit 의 기본 동작을 중지 -->
+    <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+
+    <script>
+        // <!-- 앵커의 기본 동작을 중지 -->
+        // const link = document.querySelector('.link');
+        // link.addEventListener('click', (event) => {
+        //     console.log('clicked');
+        //     event.preventDefault();
+        // })
+
+            
+        // <!-- submit 의 기본 동작을 중지 -->
+        // const submit = document.querySelector('.submit');
+        // submit.addEventListener('click', (event) => {
+        //     console.log('clicked');
+        //     event.preventDefault();
+        // })
+    
+        // const myForm = document.querySelector('form');
+        // myForm.addEventListener('submit', (event) => {
+        //     event.preventDefault();
+        //     console.log('submit!!');
+        // });
+
+        // 9.10 우클릭 제한하기(preventDefault 실습)
+        // 이벤트 타입 contextmenu를 이용해 브라우저 오른쪽 버튼 이벤트 막고 '해당 페이지에서는 오른쪽 클릭을 제한합니다.’ 경고 띄우기
+
+        // document.addEventListener('contextmenu', (event) => {
+        //     event.preventDefault();
+        //     alert("해당 페이지는 오른쪽 클릭을 제한합니다!!");
+        // });
+
+
+        // 9.11 stopPropagation()
+        // const submit = document.querySelector('.submit');
+        // submit.addEventListener('click', (event) => {
+        //     console.log('clicked');
+        //     event.preventDefault();
+        //         // event.stopPropagation();
+        // });
+        
+        // document.body.addEventListener('click', () => {
+        //     console.log('event still alive!');
+        // });
+        // stopPropagation은 버튼이후에 버블링만 막는다
+    </script>
+</body>
+
+</html>

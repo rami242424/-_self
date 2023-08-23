@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비공개(private) 프로퍼티</title>
+</head>
+
+<body>
+    <script>
+        // private 프로퍼티
+        // 비공개 프로퍼티는 객체 안의 중요한 정보를 안전하게 보호하여 프로그램이 뜻하지 않게 변경되는 것을 막는 역할을 합니다.
+        // 만약 여러분이 class를 통해 인스턴스를 만들었을 때 보통 우리는 아무런 제약없이 인스턴스의 프로퍼티에 접근하는 것이 가능합니다.
+
+        class Robot {
+        
+            constructor(name) {
+                this.name = name;
+            }
+        
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+        }
+        
+        const bot = new Robot('smith');
+        
+        bot.name // smith
+
+        // 또한 프로퍼티의 값을 수정하는 것도 가능합니다.
+        // > bot.name = 'jay';
+        // > bot.name // jay
+
+        // ㅡㅡㅡ비공개 프로퍼티로 데이터 변경ㅡㅡㅡㅡ
+        class Robot {
+            #password
+
+            constructor(name, pw) {
+                this.name = name;
+                this.#password = pw;
+            }
+
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+
+            getPassword() {
+                return this.#password
+            }
+
+            setPassword(pw) {
+                this.#password = pw;
+            }
+        }
+        
+        // # 키워드를 이용하면 프로퍼티를 비공개로 전환할 수 있습니다.
+        // 이제 #password 의 값에 접근하고 수정하려면 반드시 해당하는 기능을 하는 메서드를 사용해야합니다.
+        // 이때 값을 불러오는 메서드를 getter 메서드, 값을 수정하는 메서드를 setter 메서드로 부릅니다.
+
+
+        // <get, set 키워드를 이용해 아래처럼 코드를 좀 더 단순화하기>
+            class Robot {
+                #password
+
+                constructor(name, pw) {
+                    this.name = name;
+                    this.#password = pw;
+                }
+
+
+                sayYourName() {
+                    console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+                }
+
+                get password() {
+                    return this.#password
+                }
+
+                set password(pw) {
+                    this.#password = pw;
+                }
+            }
+
+            const bot = new Robot('재현', 1234);
+
+
+            // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+            // private 프로퍼티
+            class Robot {
+                #important
+
+                constructor(name, info) {
+                    this.name = name;
+                    this.#important = info;
+                }
+
+                sayYourName() {
+                    console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+                }
+            }
+
+            const robot = new Robot('재현', 12312123);
+            // console.log(robot.#important);
+            // robot.#important = 00000000;
+
+            // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+             // private 프로퍼티 접근, 수정
+            class Robot2 {
+                #password
+
+                constructor(name, pw) {
+                    this.name = name;
+                    this.#password = pw;
+                }
+
+
+                sayYourName() {
+                    console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+                }
+
+                // getter, setter 로 값 제어하기
+                // getPassword() {
+                //     return this.#password
+                // }
+
+                // setPassword(pw) {
+                //     this.#password = pw;
+                // }
+
+                get password() {
+                    return this.#password
+                };
+
+                set password(pw) {
+                    this.#password = pw;
+                }
+            }
+
+            const robot2 = new Robot2('재현', 123123);
+            console.log(robot2.password);
+            robot2.password = 456456;
+
+            robot2 = {
+                password: 123
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class Robot {
+            #important
+
+            constructor(name, info) {
+                this.name = name;
+                this.#important = info;
+            }
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+        }
+
+        const robot = new Robot('재현', 12312123);
+        // console.log(robot.#important);
+        // robot.#important = 00000000;
+
+
+        // private 프로퍼티 접근, 수정
+        class Robot2 {
+            #password
+
+            constructor(name, pw) {
+                this.name = name;
+                this.#password = pw;
+            }
+
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+
+            // getter, setter 로 값 제어하기
+            // getPassword() {
+            //     return this.#password
+            // }
+
+            // setPassword(pw) {
+            //     this.#password = pw;
+            // }
+
+            get password() {
+                return this.#password
+            };
+
+            set password(pw) {
+                this.#password = pw;
+            }
+        }
+
+        const robot2 = new Robot2('재현', 123123);
+        console.log(robot2.password);
+        robot2.password = 456456;
+
+        robot2 = {
+            password: 123
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.2 프로토타입 (prototype)</title>
+</head>
+<body>
+    <!--
+    실습2: 우리가 객체지향 개념에서 만들었던 ‘나’ 와 ‘대상’ 객체를 생성자를 통해서 만들어 볼 수 있도록 코드를 수정해봅시다.
+    -->
+
+    <script>
+        // const me = {
+        //     name : '한재현',
+        //     address : '제주도 제주시 인다 1길',
+        //     phoneNum : '010-8000-0000',
+        //     canWalk : function(){
+        //         console.log('재현이가 걷는다.');
+        //     }
+        // }
+
+        // // -> 
+
+        // const me = {
+        //     name : '한재현',
+        //     address : '제주도 제주시 인다 1길',
+        //     phoneNum : '010-8000-0000'
+        // }
+        
+        // function CanWalk(){};
+        // const obj = new CanWalk();
+
+        // console.log(obj.prototype); // undefined
+        // console.log(obj.__proto__===CanWalk.prototype); //true
+
+
+        // 객체를 생성자함수를 통해서 생성해보기
+        const me = {
+            name: '한재현',
+            address: '제주도 제주시 인다 1길',
+            phoneNum: '010-8000-0000',
+            canWalk: function () {
+                console.log('재현이가 걷는다.');
+            },
+            teaching: function (student) {
+                student.levelUp();
+            }
+        }
+
+        const lion = {
+            level: 1,
+            levelUp: function () {
+                this.level++;
+            }
+        }
+
+        function Me(myAddress) {
+            this.address = myAddress;
+            this.phoneNum = '010-8000-0000';
+            function canWalk() { };
+        }
+
+        Me.prototype.name = "김창영";
+
+        Me.prototype.canWalk = function () {
+            console.log('재현이가 걷는다.');
+        };
+
+        Me.prototype.teaching = function (student) {
+            student.levelUp();
+        }
+
+        function Lion() {
+            this.level = 1;
+        }
+
+        Lion.prototype.levelUp = function () {
+            this.level++;
+        }
+
+        // > me 
+        // {name: '한재현', address: '제주도 제주시 인다 1길', phoneNum: '010-8000-0000', canWalk: ƒ, teaching: ƒ}
+
+        // > const me1 = new Me();
+        // undefined
+
+        // > me1
+        // Me {address: undefined, phoneNum: '010-8000-0000'}
+        
+        
+        // > const lion1 = new Lion();
+        // undefined
+
+        // >lion1
+        // Lion {level: 1}
+
+        // >me1.canWalk()
+        // 재현이가 걷는다.
+
+        // >me1.teaching()
+        // error
+
+        // <이 3개는 모르겠다..>
+        // // >me1.name === me2.name : true
+        // // >me2.name = 
+        // // 창영추가
+
+
+        
+        // 같은 값을 참조하게 한다 + 상속이 가능하다 === 프로토타입으로 등록한다 !!
+    </script>
+</body>
+</html>

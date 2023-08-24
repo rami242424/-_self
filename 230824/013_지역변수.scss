@@ -1,0 +1,16 @@
+.one {
+    // 지역변수
+    $value: red !global;
+    color: $value;
+
+    .three {
+        background-color: $value;
+    }
+}
+
+// error 가 나지 않습니다.
+.two {
+    color: $value;
+}
+
+// !global을 사용하여 local 변수를 global 변수로 만들어 사용할 수도 있습니다

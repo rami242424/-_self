@@ -1,0 +1,67 @@
+참고 https://ko.javascript.info/function-basics#ref-31
+
+<나의 시크릿 라면레시피>
+1. 라면을 담을 그릇을 준비합니다.
+2. 물 550ml를 끓입니다.
+3. 면과 분말 스프, 후레이크를 같이 넣습니다.
+4. 4분 40초간 더 끓입니다.
+5. 그릇에 라면을 담습니다.
+
+function 나의 시크릿 라면레시피(){
+    let 라면그릇;
+
+    물 550ml를 끓입니다.;
+    면과 분말 스프, 후레이크를 같이 넣습니다.;
+    4분 40초간 더 끓입니다.;
+
+    라면그릇 = 맛있는라면;
+
+    return 라면그릇;
+
+}
+
+나의시크릿라면레시피();
+<!----------------https://ko.javascript.info/function-basics------------------------------------->
+let userName = 'John';
+
+function showMessage() {
+  userName = "Bob"; // (1) 외부 변수를 수정함
+
+  let message = 'Hello, ' + userName;
+  alert(message);
+}
+
+alert( userName ); // 함수 호출 전이므로 John 이 출력됨
+
+showMessage();
+
+alert( userName ); // 함수에 의해 Bob 으로 값이 바뀜
+<!----------------------------------------------------->
+let userName = 'John';
+
+function showMessage() {
+  let userName = "Bob"; // 같은 이름을 가진 지역 변수를 선언합니다.
+
+  let message = 'Hello, ' + userName; // Bob
+  alert(message);
+}
+
+// 함수는 내부 변수인 userName만 사용합니다,
+showMessage();
+
+alert( userName ); // 함수는 외부 변수에 접근하지 않습니다. 따라서 값이 변경되지 않고, John이 출력됩니다.
+<!----------------------------------------------------->
+function showMessage(from, text) {
+
+    from = '*' + from + '*'; // "from"을 좀 더 멋지게 꾸며줍니다.
+  
+    alert( from + ': ' + text );
+  }
+  
+  let from = "Ann";
+  
+  showMessage(from, "Hello"); //>> *Ann*: Hello
+  
+  // 함수는 복사된 값을 사용하기 때문에 바깥의 "from"은 값이 변경되지 않습니다.
+  alert( from ); //>> Ann
+  <!----------------------------------------------------->

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5. 탐색</title>
+</head>
+
+<body>
+  <div>
+    1. div
+    <div>
+      2. div
+      <ul>
+        <li>
+          li-1
+          <p>p <strong>strong</strong></p>
+          <strong>strong <em>em</em></strong>
+          <p>p <em>em</em></p>
+        </li>
+        <li class="standard">
+          li.standard
+          <p>p1 <strong>strong</strong></p>
+          <strong>strong <em>em</em></strong>
+          <p>p2 <em>em</em></p>
+        </li>
+        <li>
+          li-3
+          <p>p <strong>strong</strong></p>
+          <strong>strong <em>em</em></strong>
+          <p>p <em>em</em></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+    const standard = document.querySelector('.standard');
+
+    // 1. standard의 직계부모
+    console.log(standard.parentElement); // ul
+    // console.log(standard.parentNode); //ul
+
+    // 2. standard와 가장 가까운 div
+    console.log(standard.closest('div')); //<div> 2. div </div>
+
+    // 3. standard의 가장 가까운 누나 요소
+    console.log(standard.previousElementSibling); // <li> li-1 </li>
+
+    // 4. standard의 가장 가까운 동생 요소
+    console.log(standard.nextElementSibling); // <li> li-3 </li>
+
+    // 5. standard의 자식요소들
+    console.log(standard.children); // HTMLCollection(3) [p, strong, p]
+
+    // 6. standard의 첫째 자식
+    console.log(standard.firstElementChild); // <p>p1 <strong>strong</strong></p>
+          
+    // 7. standard의 마지막 자식
+    console.log(standard.lastElementChild); // <p>p2 <em>em</em></p>
+
+    // 8. standard에서 strong이 포함된 요소들
+    console.log(standard.querySelectorAll('strong')); // NodeList(2) [strong, strong]
+
+  </script>
+</body>
+
+</html>

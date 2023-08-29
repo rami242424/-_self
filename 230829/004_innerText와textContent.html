@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>innerText 🆚 textContent</title>
+</head>
+
+<body>
+  <input type="text">
+  <p>hello<strong style="display: none;">world</strong></p>
+
+  <script>
+    const elementP = document.querySelector('p');
+
+    // 요소 내 HTML 모두 반환
+    console.log('innerHTML:', elementP.innerHTML)
+    //innerHTML: hello <strong style="display: none;">world</strong>
+  
+    // 렌더링된 텍스트를 반환
+    console.log('innerText:', elementP.innerText)
+    // innerText: hello
+
+    // 노드와 자손의 텍스트 반환
+    console.log('textContent:', elementP.textContent)
+    // textContent: helloworld
+
+    // 요소 내 HTML 모두 반환
+    console.log('innerHTML:', elementP.innerHTML.length)
+    // innerHTML: 50
+
+    // 렌더링된 텍스트를 반환
+    console.log('innerText:', elementP.innerText.length)
+    // innerText: 5
+
+    // 노드와 자손의 텍스트 반환
+    console.log('textContent:', elementP.textContent.length)
+    // textContent: 10
+
+
+  </script>
+
+</body>
+
+</html>

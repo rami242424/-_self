@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // html 문서를 다 읽고 나서 로드해라 (onload)
+        // $(document).ready(function(){
+
+        // });
+    </script>
+</head>
+<body>
+    <p>안녕1</p>
+    <p class="hello">안녕2</p>
+    <p id="hello">안녕3</p>
+
+    <header id="header">
+        <ul>
+            <li>안녕1</li>
+            <li>안녕2</li>
+        </ul>
+    </header>
+
+    <script>
+        // $('p').hide();
+        // $('p').show();
+
+        // class가 "hello"인 안녕2에 css적용
+        $(".hello").css('color', 'red') 
+
+        //jQuery : id가 "header"인 요소의 자식 => "ul"의 자식 => "li"의 첫번째 요소에 css적용
+        $("#header ul li:first-child").css('color', 'yellow');
+
+        //javaScript : id가 "header"인 요소의 자식 => "ul"의 자식 => "li"의 첫번째 요소에 css적용
+        document.querySelector("#header ul li:last-child").style.color = 'royalblue';
+
+        // console.log($('p'))
+        // console.log(document.querySelectorAll('p'))
+
+    </script>
+</body>
+</html>

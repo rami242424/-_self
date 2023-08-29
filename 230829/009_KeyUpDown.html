@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> -->
+  <title>9. Events</title>
+</head>
+
+<body>
+  <input type="text">
+  
+  <script>
+    // document.addEventListener("keyup", (e) => {
+    //   console.log('keyup code:', e.code);
+    //   console.log('keyup key:', e.key);
+    //   console.log('keyup keyCode:', e.keyCode);
+    // });
+    // d를 입력했을때
+    // keyup code: KeyD
+    // keyup key: d
+    // keyup keyCode: 68
+
+
+    // document.addEventListener("keyup", (e) => {
+    //   console.log('keyup key:', e.key);
+    // });
+    // d를 입력했을때
+    // keyup key: d
+
+
+    // document.addEventListener("keydown", (e) => {
+    //   console.log('keydown key:', e.key);
+    // });
+    // d를 입력했을때
+    // keydown key: d
+    // d
+
+
+    // document.addEventListener("keypress", (e) => {
+    //   console.log('keypress key:', e.key);
+    // });
+    // d를 입력했을때
+    // keypress key: d
+    // d
+
+    document.querySelector('input').addEventListener('input', function (e) {
+      console.log('e.data');
+    })
+  </script>
+
+</body>
+
+</html>

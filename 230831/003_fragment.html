@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fragment</title>
+</head>
+    <!-- DOM 접근과 업데이트는 가능한 적게 합니다.
+    - DOM 접근은 가능한 좁은 범위에서 적게 사용합니다. -->
+    <main>
+
+    </main>
+    <article class="parent">
+        <figure>
+            <img class="figImg"
+                src="https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg"
+                alt="">
+            <figcaption class="figCap">
+                유재석씨가 수상식에서 환하게 웃고 있다.
+            </figcaption>
+        </figure>
+    </article>
+    
+    <script>
+        // 1번 최적의 방법
+        let main2 = 1;
+        main2 = null;
+
+        const main = document.querySelector('main');
+        const frag = new DocumentFragment();
+        const frag2 = new DocumentFragment();
+        // const frag = document.createDocumentFragment();
+
+
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> //
+        // // 2번 : 3번보다 용량,성능면에서 더 최적화됨 ('돔탐색 최소화')
+        // const figure = document.querySelector(".parent figure")
+        // const img = figure.querySelector('figImg');
+        // const figcap = figure.querySelector('figCap');
+
+        
+        // // 3번 : document를 계속 불러오면 용량, 성능 낮아짐
+        // const img = document.querySelector('figImg');
+        // const figcap = document.querySelector('figCap');
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> //
+
+        // 2번과 3번식에 이어서 할 수 있는 방법(차선책) 
+        // img.src() 도 가능 (차선책)
+        // img.setAttribute('src', "https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg")
+        
+        // // figcap.innerText 도 가능 (차선책)
+        // figcap.textContent = '유재석씨가 수상식에서 환하게 웃고 있다.';
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> //
+
+
+        // 1번식에 이어서~
+        for (let i = 0; i < 10; i++) {
+            const article = document.createElement('article');
+            article.innerHTML =
+                `<figure>
+                    <img class="figImg"
+                        src="https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg"
+                        alt="">
+                    <figcaption class="figCap">
+                        유재석씨가 수상식에서 환하게 웃고 있다.
+                    </figcaption>
+                </figure>`;
+            // main.appendChild(article);
+            frag.appendChild(article);
+        }
+
+        // main.appendChild();
+        console.log(frag.cloneNode());
+        // main.appendChild(frag.cloneNode(true));
+        // main.appendChild(frag.cloneNode(true));
+        // main.appendChild(frag.cloneNode(true));
+        
+
+        
+    </script>
+</body>
+</html>

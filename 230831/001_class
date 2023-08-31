@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+        });
+        
+        class Robot {
+
+            // #password
+
+            // 인스턴스가 생성될때 작동
+            constructor(name, pw) {
+                this.name = name;
+                // this.password = pw;
+                this.#password = pw;
+            }
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+
+            get password() {
+                // return this._password
+                // return this.password
+                return this.#password
+            }
+
+            set password(pw) {
+                // this._password = pw;
+                // this.password = pw;
+                this.#password = pw;
+            }
+        }
+
+        const robot = new Robot('lion', 1234);
+
+        // set pw를 this_password에서 this.password로 바꾸면 에러생김(호출을 많이함)
+        // why? 
+
+
+        // get #password로 변경하면 console.log에 robot.password // 1234 로 제대로 나옴
+        // set #password로 변경하면 console.log에 robot.password // 5678
+
+        // robot.#password // 5678
+
+    </script>
+</body>
+</html>

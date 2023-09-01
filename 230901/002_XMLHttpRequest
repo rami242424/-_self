@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <!-- https://paullabworkspace.notion.site/14-AJAX-95eff0c19a954e1db988abce00b80587 -->
+</head>
+<body>
+    <script>
+        const xhrObj = new XMLHttpRequest();
+        xhrObj.open('GET', 'URL');
+
+        xhrObj.onreadystatechange = () => {
+            if(xhrObj.readyState === 4 && xhrObj.status === "200"){
+                const result = reqeustObj.responseText;
+            }
+        };
+    </script>
+</body>
+</html>

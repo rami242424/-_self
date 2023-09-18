@@ -1,5 +1,3 @@
-// 제발 오타주의!!
-
 import React from 'react';
 import LicatImg from '../../images/licat.png';
 import './Modal.css';

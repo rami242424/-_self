@@ -1,0 +1,77 @@
+.img-tit {
+    margin: auto;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    display: flex;
+    width: 244px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.cont-footer{
+    color: #8596BF;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    padding-top: 60px;
+    padding-bottom: 103px;
+}
+
+.content-box {
+    width: 400px;
+    height: 360px;
+    margin: auto;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: var(--gradient, linear-gradient(144deg, #5572BB 2.13%, #374B7C 102.97%));
+    box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.40);
+}
+
+.content-box h2 {
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    justify-content: center;
+    padding-top: 48px;
+    padding-bottom: 23px;
+
+}
+
+.sec-div {
+    width: 312px;
+    height: 1px;
+    flex-shrink: 0;
+    background: #3D538A;
+    margin: auto;
+}
+
+.tit-letter {
+    color: var(--light, #A5B6EE);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding-top: 32px;
+}
+
+.tit-letter .hour {
+    padding-left:86px;
+}
+
+.tit-letter .minute {
+    padding-left:79px;
+}
+
+.tit-letter .second {
+    padding-left:79px;
+}

@@ -1,34 +1,39 @@
-// 액션을 생성하는 함수
-export const addNumber = () => {
-    return { type: 'ADD' }
-}
-export const subtractNumber = () => {
-    return { type: 'SUBTRACT' }
-}
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addNumber, subtractNumber } from '../modules/goodsCounter';
 
-// 초기 state 값
-const initState = {
-    stock: 10,
-    goods: 1
-}
+export default function GoodsCounter() {
 
-const goodsReducer = (state = initState, action) => {
-    switch (action.type) {
-        case "ADD":
-            return {
-                ...state,
-                stock: state.stock - 1,
-                goods: state.goods + 1
-            }
-        case "SUBTRACT":
-            return {
-                ...state,
-                stock: state.stock + 1,
-                goods: state.goods - 1
-            }
-        default:
-            return state;
-    }
-}
+    // store의 state 접근하도록 합니다.
+    const { stock, goods } = useSelector((state) => {
+        return {
+            stock: state.goodsReducer.stock,
+            goods: state.goodsReducer.goods,
+        }
+    });
 
-export default goodsReducer;
+    const dispatch = useDispatch();
+
+    // 디스패치 함수에 액션을 인자로 전달하여 실행합니다.
+    const onSubtractNumber = () => dispatch(subtractNumber());
+    const onAddNumber = () => dispatch(addNumber());
+
+
+    return (
+        <>
+            <h1>Product Detail</h1>
+            <h2>프론트 개발자 전동 칫솔</h2>
+            <span><strong>17,500</strong>원</span>
+            <div id="counter-box">
+                <button type="button" id="minus" onClick={onSubtractNumber} disabled={goods > 0 ? false : true}>MINUS</button>
+                <span id="number">{goods}</span>
+                <button type="button" id="plus" onClick={onAddNumber} disabled={stock > 0 ? false : true}>PLUS</button>
+            </div>
+            <div>총 수량 <strong id="quantity">{goods}</strong></div>
+            <div><strong id="total">{goods * 17500}</strong>원</div>
+            <div>
+                재고 <strong>{stock}</strong>
+            </div>
+        </>
+    )
+}

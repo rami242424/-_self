@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM event 객체</title>
+	<style>
+    #container {
+      width:300px;
+      margin:10px auto;
+    }
+  </style>
+</head>
+<body>
+	<div id="container">
+    <img src="images/cup-1.png" id="cup">		
+  </div>	
+
+	<script>
+		// 일단 단일 페이지라서(?) 두값은 동일하게 나온다
+		// 두값의 차이점
+
+		// client 메서드는 브라우저가 기준인 좌표입니다. 현재 보이는 브라우저 화면 상에서 어느 지점에 위치하는 지를 의미하기 때문에 스크롤 해도 값은 변하지 않습니다.
+
+		// page 메서드는 문서가 기준입니다. client와 비슷하지만 이 메서드는 문서 전체 크기가 기준이라 스크롤 시 값이 바뀝니다. (스크롤을 포함해서 측정합니다)
+
+		// var cup = document.querySelector('#cup');
+		// cup.onclick = function (event){
+		// 	alert('이벤트 유형: '+ event.type +", 이벤트 발생 위치: " + event.clientX + ", " + event.clientY);
+		// }
+
+
+		// var cup = document.querySelector('#cup');
+		// cup.onclick = function (event){
+		// 	alert('이벤트 유형: '+ event.type +", 이벤트 발생 위치: " + event.pageX + ", " + event.pageY);
+		// }
+	</script>
+</body>
+</html>

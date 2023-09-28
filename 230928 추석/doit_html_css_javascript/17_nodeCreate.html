@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Programming</title>
+	<link rel="stylesheet" href="css/nodelist.css">
+</head>
+<body>
+  <div id="container">
+    <h1>Web Programming</h1>
+    <p>공부할 주제를 기록해 보세요</p>
+    <form action="">
+      <input type="text" id="subject" autofocus>
+      <button onclick="addContents(); return false;">추가</button>
+    </form>
+    <hr>  
+    <ul id="itemList"></ul>  
+  </div>
+
+  <script>
+    function addContents(){
+    // li요소 만들어서 ul 밑에 추가하기
+    var newLi = document.createElement('li');
+    document.querySelector('#itemList').appendChild(newLi);
+    // itemList.insertBefore(newLi, itemList.childNodes[0]); // 먼저 입력한 값이 아래로 가고, 마지막에 입력한 값이 맨위에 오게 만드는 방법
+
+    // 인풋 벨류 값을 li요소로 만들기
+    var subject = document.querySelector('#subject');
+    var newText = document.createTextNode(subject.value);
+    newLi.appendChild(newText);
+
+    // 추가 후 인풋에 남은 글씨 사라지기
+    subject.value = "";
+
+    //부모 노드 찾아서 자식 노드 지우기
+    // itemList.removeChild(li);
+    // li.parentNode.removeChild(li);
+
+    // 입력한 항목을 클릭해서 삭제하기
+    // 1. 입력한 텍스트 가져오기
+    // 2. 거기에서 클릭 이벤트가 발생하면 그 항목의 부모 노드를 찾아서 li요소를 삭제하게 만들기
+
+    var items = document.querySelectorAll('li');
+      for (let i = 0; i < items.length; i++){
+        items[i].addEventListener('click', function(){
+          if (this.parentNode) {
+            this.parentNode.removeChild(this);
+          }
+
+        });
+      }
+
+
+
+    }
+
+
+
+
+
+  </script>
+</body>
+</html>

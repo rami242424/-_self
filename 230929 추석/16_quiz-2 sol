@@ -22,7 +22,7 @@
   </div>
 
   <script>
-    // 팝업창의 너비 400, 높이 200, 브라우저 중앙에 보이게 하지
+    // 팝업창의 너비 400, 높이 200, 브라우저 중앙에 보이게 하기
 
 
     document.getElementById('bttn').onclick = displayTime;  // 버튼 클릭하면 displayTime 함수 실행

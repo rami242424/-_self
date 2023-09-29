@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>독서 챌린지</title>
+  <style>
+    #container{
+      margin:50px auto;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      border:2px double #222;
+      background-color:#d8f0fc;
+      text-align: center;
+    }
+    h1 {
+      margin-top:80px;
+    }
+    .accent {
+      font-size:1.8em;
+      font-weight:bold;
+      color:red;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>책 읽기</h1>
+    <p><span class="accent" id="result"></span>일 연속으로 <br> 책 읽기를 달성했군요.</p>
+    <p>축하합니다!</p>
+  </div>  
+  <script>
+    var now = new Date("2023-09-29");
+    console.log("오늘 :"+ now);
+    //오늘 :Fri Sep 29 2023 09:00:00 GMT+0900 (한국 표준시)
+
+    var firstDay = new Date("2023-09-01");
+    console.log("첫날 :"+ firstDay);
+    //첫날 :Fri Sep 01 2023 09:00:00 GMT+0900 (한국 표준시)
+
+    var toNow = now.getTime();
+    console.log("오늘까지는 :"+ toNow);
+    // 오늘까지는 :1695945600000
+
+    var toFirstDay = firstDay.getTime();
+    console.log("처음 시작한날까지는 :"+ toFirstDay);
+    // 처음 시작한날까지는 :1693526400000
+
+    var passedTime = toNow - toFirstDay;
+    console.log(passedTime+ "초");
+    // 2419200000초
+
+    passedTime = Math.round(passedTime / (1000*60*60*24));
+    console.log(passedTime);
+    // 28 (일)
+
+    // <내가 쓴 오답들..>
+    // document.querySelector('#result').appendChild(passedTime);
+    // document.querySelector('#result').appendChild.createTextNode(passedTime);
+    // var result = document.querySelector('#result').appendChild(passedTime);
+    // document.write(passedTime);
+
+    // <답>
+    document.querySelector('#result').innerText = passedTime;
+
+  </script>
+</body>
+</html>

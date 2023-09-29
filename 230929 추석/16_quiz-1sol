@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현재 시각은?</title>
+  <style>
+    p {
+      margin-top:20px;
+      font-size:1.2em;
+      text-align: center;
+    }
+    .display {
+      font-size:1.5em; 
+      font-weight:bold;
+      color:blue;      
+    }
+  </style>
+</head>
+<body>
+  <p>현재 시각 <span id="current" class="display"></span></p>
+  <script>
+    // var now = new Date();
+    // document.write(now); // 요일.월.일.년도.시.분.초.GMT시간(한국 표준시)
+
+    // document.write("toLocaleString()" + now.toLocaleString()); // 년.월.일. 오전 시.분.초
+
+    //////////////////////////////////////////////////////////
+    
+    setInterval(displayNow, 1000);
+
+    function displayNow(){
+      var now = new Date ();
+      var Time = now.toLocaleTimeString();
+    
+      document.querySelector('#current').innerHTML = Time;
+    }
+
+  </script>
+</body>
+</html>

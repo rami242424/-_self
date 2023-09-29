@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 2</title>
+</head>
+<body>
+	<script>
+		//해본것
+		// var first = window.prompt('비교할 첫 번째 숫자:').value;
+		// var second = window.prompt('비교할 두 번째 숫자:').value;
+
+		// function (){
+		// 	if (first > second) {
+		// 		return alert("second(이)가 first보다 큽니다.");
+		// 	} else {
+		// 		return alert("first(이)가 second보다 큽니다.");
+		// 	} default {
+		// 		return alert("같습니다.");
+		// 	}
+		// }
+
+
+		
+		// 교안 답 참고
+		// var first = parseInt(prompt('비교할 첫 번째 숫자:'));
+		// var second = parseInt(prompt('비교할 두 번째 숫자:'));
+
+		// function compareTwo(a, b){
+		// 	if (a > b) {
+		// 		return alert(a + "(이)가 " + b + "보다 큽니다.");
+		// 	} else if (a < b){
+		// 		return alert(b + "(이)가 " + a + "보다 큽니다.");
+		// 	} else {
+		// 		return alert("같습니다.");
+		// 	}
+		// }
+		// compareTwo(first, second);
+
+
+
+		// 교안답
+		var num1 = parseInt(prompt("비교할 첫 번째 숫자: "));  
+		var num2 = parseInt(prompt("비교할 두 번째 숫자: "));  
+
+			compareTwo(num1, num2);
+
+			function compareTwo(x, y) {
+		if (x === y) {
+			alert(x + "와(과) " + y + "는 같습니다.");
+		}         
+		else if (x > y) {
+			alert( x + "(이)가 " + y + "보다 큽니다.");
+		}        
+		else {
+			alert(y + "(이)가 " + x + "보다 큽니다.");
+		}        
+			}
+	</script>
+</body>
+</html>

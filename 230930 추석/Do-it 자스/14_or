@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+</head>
+<body>
+  <script>
+    //내가 한것 (틀림)
+    // var num1 = prompt("50 미만인 숫자를 입력하세요.");
+    // var num2 = prompt("50 미만인 숫자를 입력하세요.");
+
+    // if (num1 < 50 || num2 < 50)
+    //     alert("숫자 2개 중에서 최소한 하나는 10 미만입니다.")
+    // else
+    //     alert("숫자 2개 중에서 10미만인 수가 없습니다.");
+
+
+    // 교재
+    // var num1 = prompt("50 미만인 숫자를 입력하세요.");
+    // var num2 = prompt("50 미만인 숫자를 입력하세요.");
+
+    // if (num1 < 10 || num2 < 10)
+    //     alert("숫자 2개 중에서 최소한 하나는 10 미만입니다.")
+    // else
+    //     alert("숫자 2개 중에서 10미만인 수가 없습니다.");
+
+
+    // 업그레이드해보자
+    var num1 = prompt("50 미만인 숫자를 입력하세요.");
+    var num2 = prompt("50 미만인 숫자를 입력하세요.");
+
+    if (num1 !== null || num2 !== null){
+      if (num1 < 10 || num2 < 10)
+          alert("숫자 2개 중에서 최소한 하나는 10 미만입니다.")
+      else
+          alert("숫자 2개 중에서 10미만인 수가 없습니다.");
+    }
+    else
+      alert("입력이 취소됐습니다.");
+    
+  </script>
+</body>
+</html>

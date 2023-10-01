@@ -64,6 +64,12 @@
     // <답>
     document.querySelector('#result').innerText = passedTime;
 
+    //---------------------다시 내방식으로 풀어봄 (작동됨)
+    var current = new Date('2023-10-01');
+    var firstDay = new Date('2023-09-02');
+    var howLong = (current - firstDay) / (1000*60*60*24);
+
+    document.querySelector('#result').innerText = howLong;
   </script>
 </body>
 </html>

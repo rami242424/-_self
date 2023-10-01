@@ -44,6 +44,9 @@
       //답
       function showLightBox(){
         var bigLocation = this.getAttribute('data-src'); // 섬네일 이미지의 속성값을 가져온다.
+	// console.log(this); this 는 클릭한 섬네일 한개
+        // console.log(this.getAttribute("data-src")); this.getAttribute("data-src") 는 딱 data-src만 (이런식 images/tree-2.jpg)
+	      
         lightboxImage.setAttribute('src', bigLocation); // 라이트 박스의 이미지 경로 수정
         lightbox.style.display ='block'; // 라이트 박스 이미지를 화면에 표시
       }

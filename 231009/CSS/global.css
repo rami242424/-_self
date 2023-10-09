@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&family=Orbit&family=Roboto:wght@300;400;700&display=swap');
+
+@import "./reset.css";
+@import "./varialble.css";
+
+
+@import "./navigation.css";
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-purple);
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input {
+    border: none;
+    outline: none;
+    appearance: none;
+}
+
+.display-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.position-relative {
+    position: relative;
+}

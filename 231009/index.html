@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>hamburger practice</title>
+    <title>NEWFLIX</title>
+    <!-- <link rel="stylesheet" href="./CSS/global.css"> -->
+    <link rel="stylesheet" href="./CSS/login.css">
 </head>
 <body>
-  <span class="hamburger-title">My hamburger</span>
-  <label>
-    <div class="hamburger-container">
-      <input type="checkbox" class="toggle">
-      <div class="hamburger"></div>
+    <div class="container">
+        <img src="./IMG/스크린샷 2023-10-09 234621.png" alt="" class="login-img" />
     </div>
-  </label>
+    <div class="login-title">
+        <h1 class="login-title__maintext">Newflix</h1>
+        <p class="login-title__subtext">
+            새로운 OTT 뉴플릭스 등장~ <br />
+            지금 가입하면 한달 무료!!        
+        </p>
+    </div>
+    <form action="find.html" class="login-form">
+        <input name="username" type="text" required autocomplete="off" placeholder="ID" />
+        <input type="password" type="password" required autocomplete="off" placeholder="PASSWORD">
+        <input type="submit" value="접속하기" />
+    </form>
+
 </body>
 </html>
